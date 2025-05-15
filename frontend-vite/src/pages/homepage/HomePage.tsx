@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ShoppingCart, Search, Menu, Heart, User } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Product } from "./types/Product";
 import { Category } from "./types/Category";
 import ProductSlider from "./components/ProductSlider";
@@ -309,84 +310,54 @@ const Homepage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen text-sm md:text-base">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4">
-          <div className="py-2 flex items-center justify-between border-b">
+          <div className="hidden py-2 md:flex items-center justify-between border-b">
             <div className="text-sm flex space-x-4 text-gray-600">
-              <a
-                href="#"
-                className="hover:text-green-600 transition duration-200"
-              >
+              <Link to="/help" className="hover:text-green-600 transition duration-200">
                 Help
-              </a>
-              <a
-                href="#"
-                className="hover:text-green-600 transition duration-200"
-              >
+              </Link>
+              <Link to="/orders" className="hover:text-green-600 transition duration-200">
                 Track Order
-              </a>
-              <a
-                href="#"
-                className="hover:text-green-600 transition duration-200"
-              >
+              </Link>
+              <Link to="/contact" className="hover:text-green-600 transition duration-200">
                 Contact Us
-              </a>
+              </Link>
             </div>
             <div className="text-sm flex space-x-4 text-gray-600">
-              <a
-                href="#"
-                className="hover:text-green-600 transition duration-200"
-              >
+              <Link to="/profile" className="hover:text-green-600 transition duration-200">
                 Sign In
-              </a>
-              <a
-                href="#"
-                className="hover:text-green-600 transition duration-200"
-              >
+              </Link>
+              <Link to="/profile" className="hover:text-green-600 transition duration-200">
                 Create Account
-              </a>
+              </Link>
             </div>
           </div>
           <div className="py-4 flex items-center justify-between">
             <div className="flex items-center">
               <Menu className="mr-4 lg:hidden text-gray-700" size={24} />
-              <a href="#" className="text-2xl font-bold text-green-600">
+              <Link to="/" className="text-2xl font-bold text-green-600">
                 GreenShop
-              </a>
+              </Link>
             </div>
             <div className="hidden lg:flex items-center space-x-8">
-              <a
-                href="#"
-                className="font-medium text-gray-900 hover:text-green-600 transition duration-200"
-              >
+              <Link to="/" className="font-medium text-gray-900 hover:text-green-600 transition duration-200">
                 Home
-              </a>
-              <a
-                href="#"
-                className="font-medium text-gray-700 hover:text-green-600 transition duration-200"
-              >
+              </Link>
+              <Link to="/products" className="font-medium text-gray-700 hover:text-green-600 transition duration-200">
                 Shop
-              </a>
-              <a
-                href="#"
-                className="font-medium text-gray-700 hover:text-green-600 transition duration-200"
-              >
+              </Link>
+              <Link to="/products" className="font-medium text-gray-700 hover:text-green-600 transition duration-200">
                 Categories
-              </a>
-              <a
-                href="#"
-                className="font-medium text-gray-700 hover:text-green-600 transition duration-200"
-              >
+              </Link>
+              <Link to="/products" className="font-medium text-gray-700 hover:text-green-600 transition duration-200">
                 Deals
-              </a>
-              <a
-                href="#"
-                className="font-medium text-gray-700 hover:text-green-600 transition duration-200"
-              >
+              </Link>
+              <Link to="/about" className="font-medium text-gray-700 hover:text-green-600 transition duration-200">
                 About
-              </a>
+              </Link>
             </div>
             <div className="flex items-center space-x-4">
               <div className="relative hidden md:block">
@@ -395,23 +366,20 @@ const Homepage: React.FC = () => {
                   placeholder="Search products..."
                   className="bg-gray-100 rounded-full py-2 px-4 pl-10 w-64 focus:outline-none focus:ring-2 focus:ring-green-500 focus:bg-white transition duration-200"
                 />
-                <Search
-                  className="absolute left-3 top-2.5 text-gray-500"
-                  size={18}
-                />
+                <Search className="absolute left-3 top-2.5 text-gray-500" size={18} />
               </div>
-              <button className="text-gray-700 hover:text-green-600 transition duration-200">
+              <Link to="/profile" className="text-gray-700 hover:text-green-600 transition duration-200">
                 <User size={24} />
-              </button>
-              <button className="text-gray-700 hover:text-green-600 transition duration-200">
+              </Link>
+              <Link to="/wishlist" className="text-gray-700 hover:text-green-600 transition duration-200">
                 <Heart size={24} />
-              </button>
-              <button className="relative text-gray-700 hover:text-green-600 transition duration-200">
+              </Link>
+              <Link to="/cart" className="relative text-gray-700 hover:text-green-600 transition duration-200">
                 <ShoppingCart size={24} />
                 <span className="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   3
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
